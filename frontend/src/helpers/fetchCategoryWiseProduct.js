@@ -25,78 +25,44 @@
 // export default fetchCategoryWiseProduct;
 
 
-import { useState, useEffect } from "react";
-import SumaryApi from "../common/SumaryApi"; // Add this line to import SumaryApi
+const { default: SumaryApi } = require("../common");
 
-const fetchCategoryWiseProduct = async (category, controller) => {
+const fetchCategoryWiseProduct = async (category) => {
     try {
-        console.log("Fetching from:", SumaryApi.categoryWiseProduct.url);
-
+        // Make the fetch request
         const response = await fetch(SumaryApi.categoryWiseProduct.url, {
-            method: SumaryApi.categoryWiseProduct.method,
+            method: SumaryApi.categoryWiseProduct.method, // POST or GET method based on your API
             headers: {
-                "content-type": "application/json"
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify({ category: category }),
-            signal: controller.signal // Pass signal to handle cancellation
+            body: JSON.stringify({
+                category: category, // The category you want to fetch the products for
+            }),
         });
 
+        // Check if response status is OK (200)
         if (!response.ok) {
-            throw new Error(`Network response was not ok: ${response.statusText}`);
+            throw new Error(`Failed to fetch: ${response.status} ${response.statusText}`);
         }
 
+        // Parse the response JSON
         const dataResponse = await response.json();
-
-        if (!dataResponse || !dataResponse.data) {
-            throw new Error("No data found in the response.");
-        }
-
+        
+        // Return the fetched data
         return dataResponse;
+        
     } catch (error) {
-        if (error.name !== "AbortError") {
-            console.error("Error in fetching data:", error.message);
-        }
+        // Log the error to the console for debugging purposes
+        console.error("Error in fetchCategoryWiseProduct:", error);
+
+        // Optionally, alert the user or show an error message
+        alert("There was an issue fetching category data. Please try again later.");
+        return null; // You could also return an empty object/array based on the expected result
     }
 };
 
-const YourComponent = () => {
-    const [data, setData] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const controller = new AbortController();
+export default fetchCategoryWiseProduct;
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const result = await fetchCategoryWiseProduct("category-name", controller);
-                setData(result?.data || []);
-                setLoading(false);
-            } catch (error) {
-                console.error("Error in fetching category data:", error);
-                setLoading(false);
-            }
-        };
-
-        fetchData();
-
-        return () => {
-            controller.abort(); // Cancel the fetch request if the component unmounts
-        };
-    }, []);
-
-    if (loading) {
-        return <div>Loading...</div>;
-    }
-
-    return (
-        <div>
-            {data.map((item, index) => (
-                <div key={index}>{item.name}</div>
-            ))}
-        </div>
-    );
-};
-
-export default YourComponent;
 
 
 
