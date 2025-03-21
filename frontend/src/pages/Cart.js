@@ -3,7 +3,6 @@ import SumaryApi from '../common'
 import Context from '../context'
 import displayINRCurrency from '../helpers/displayCurrency'
 import { MdDelete } from "react-icons/md";
-// import {loadStripe} from '@stripe/stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
 
 

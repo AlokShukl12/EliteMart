@@ -15,8 +15,6 @@ const Logo = ({w,h}) => {
 
         </path>
     </g>
-    
-    
 
     <g id="SvgjsG1032" featurekey="sloganFeature-0"
         transform="matrix(2.0663600877799073,0,0,2.0663600877799073,119.70852494513755,103.66737189459191)"

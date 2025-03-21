@@ -143,7 +143,7 @@ const CategoryProduct = () => {
                         <form className='text-sm flex flex-col gap-2 py-2'>
                             {productCategory.map((categoryName, index) => {
                                 return (
-                                    <div className='flex items-center gap-3' key={categoryName.value}> {/* Add key prop */}
+                                    <div className='flex items-center gap-3' key={categoryName.value}> 
                                         <input
                                             type='checkbox'
                                             name={'category'}
