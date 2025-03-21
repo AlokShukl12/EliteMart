@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import SumaryApi from '../common'
+import SummaryApi from '../common'
 import VerticalCard from '../components/VerticalCard'
 
 
@@ -13,7 +13,7 @@ const SearchProduct = () => {
 
     const fetchProduct = async()=>{
         setLoading(true)
-        const response = await fetch(SumaryApi.searchProduct.url+query.search)
+        const response = await fetch(SummaryApi.searchProduct.url+query.search)
         const dataResponse = await response.json()
         setLoading(false)
 

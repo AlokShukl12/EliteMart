@@ -1,6 +1,6 @@
 const backendDomin = process.env.REACT_APP_BACKEND_URL
 // " http://localhost:8080"
-const SumaryApi= {
+const SummaryApi= {
     signUP : {
         url :`${backendDomin}/api/signup`,
         method: "post"
@@ -90,4 +90,4 @@ const SumaryApi= {
     
 }
 
-export default SumaryApi;
+export default SummaryApi;

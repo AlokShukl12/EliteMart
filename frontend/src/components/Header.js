@@ -5,7 +5,7 @@ import { FaRegCircleUser } from "react-icons/fa6";
 import { FaShoppingCart } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import SumaryApi from '../common';
+import SummaryApi from '../common';
 import { toast } from 'react-toastify';
 import { setUserDetails} from '../store/userSlice';
 import ROLE from '../common/role';
@@ -23,8 +23,8 @@ const Header = () => {
     const [search,setSearch] = useState(searchQuery)
 
     const handleLogout = async() => {
-        const fetchData = await fetch(SumaryApi.logout_user.url,{
-            method :SumaryApi.logout_user.method,
+        const fetchData = await fetch(SummaryApi.logout_user.url,{
+            method :SummaryApi.logout_user.method,
             credentials : 'include'
         })
 

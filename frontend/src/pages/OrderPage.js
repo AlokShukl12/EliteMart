@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import SumaryApi from '../common'
+import SummaryApi from '../common'
 import moment from 'moment'
 import displayINRCurrency from '../helpers/displayCurrency'
 
@@ -7,8 +7,8 @@ import displayINRCurrency from '../helpers/displayCurrency'
 const OrderPage = () => {
   const [data,setData] = useState([])
   const fetchOrderDetails = async() => {
-    const response = await fetch(SumaryApi.getOrder.url,{
-      method : SumaryApi.method,
+    const response = await fetch(SummaryApi.getOrder.url,{
+      method : SummaryApi.method,
       credentials : 'include'
       
     })

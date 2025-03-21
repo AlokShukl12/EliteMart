@@ -3,7 +3,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import productCategory from '../helpers/productCategory';
 import VerticalCard from '../components/VerticalCard';
-import SumaryApi from '../common';
+import SummaryApi from '../common';
 
 const CategoryProduct = () => {
     const [data, setData] = useState([]);
@@ -27,8 +27,8 @@ const CategoryProduct = () => {
     // Memoize fetchData using useCallback
     const fetchData = useCallback(async () => {
         setLoading(true); // Set loading to true before fetching
-        const response = await fetch(SumaryApi.filterProduct.url, {
-            method: SumaryApi.filterProduct.method,
+        const response = await fetch(SummaryApi.filterProduct.url, {
+            method: SummaryApi.filterProduct.method,
             headers: {
                 'content-type': 'application/json',
             },

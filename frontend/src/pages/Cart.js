@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import SumaryApi from '../common'
+import SummaryApi from '../common'
 import Context from '../context'
 import displayINRCurrency from '../helpers/displayCurrency'
 import { MdDelete } from "react-icons/md";
@@ -15,8 +15,8 @@ const Cart = () => {
 
     const fetchData = async() =>{
         
-        const response = await fetch(SumaryApi.addToCartProductView.url,{
-            method : SumaryApi.addToCartProductView.method,
+        const response = await fetch(SummaryApi.addToCartProductView.url,{
+            method : SummaryApi.addToCartProductView.method,
             credentials : 'include',
             headers : {
                 "content-type" : 'application/json'
@@ -43,10 +43,9 @@ const Cart = () => {
          setLoading(false)
     },[])
 
-
     const increaseQty = async(id,qty) =>{
-        const response = await fetch(SumaryApi.updateCartProduct.url,{
-            method : SumaryApi.updateCartProduct.method,
+        const response = await fetch(SummaryApi.updateCartProduct.url,{
+            method : SummaryApi.updateCartProduct.method,
             credentials : 'include',
             headers : {
                 "content-type" : 'application/json'
@@ -70,8 +69,8 @@ const Cart = () => {
 
     const decraseQty = async(id,qty) =>{
        if(qty >= 2){
-            const response = await fetch(SumaryApi.updateCartProduct.url,{
-                method : SumaryApi.updateCartProduct.method,
+            const response = await fetch(SummaryApi.updateCartProduct.url,{
+                method : SummaryApi.updateCartProduct.method,
                 credentials : 'include',
                 headers : {
                     "content-type" : 'application/json'
@@ -94,8 +93,8 @@ const Cart = () => {
     }
 
     const deleteCartProduct = async(id)=>{
-        const response = await fetch(SumaryApi.deleteCartProduct.url,{
-            method : SumaryApi.deleteCartProduct.method,
+        const response = await fetch(SummaryApi.deleteCartProduct.url,{
+            method : SummaryApi.deleteCartProduct.method,
             credentials : 'include',
             headers : {
                 "content-type" : 'application/json'
@@ -120,8 +119,8 @@ const Cart = () => {
 
         const stripePromise = await loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY )
 
-       const response = await fetch(SumaryApi.payment.url,{
-        method : SumaryApi.payment.method,
+       const response = await fetch(SummaryApi.payment.url,{
+        method : SummaryApi.payment.method,
         credentials : 'include',
         headers : {
             "content-type" : 'application/json'

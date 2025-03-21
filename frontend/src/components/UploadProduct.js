@@ -5,7 +5,7 @@ import { FaCloudUploadAlt } from "react-icons/fa";
 import uploadImage from '../helpers/uploadImage';
 import DisplayImage from './DisplayImage';
 import { MdDelete } from "react-icons/md";
-import SumaryApi from '../common';
+import SummaryApi from '../common';
 import {toast} from 'react-toastify'
 
 const UploadProduct = ({
@@ -67,8 +67,8 @@ const UploadProduct = ({
   const handleSubmit = async(e) =>{
     e.preventDefault()
     
-    const response = await fetch(SumaryApi.uploadProduct.url,{
-      method : SumaryApi.uploadProduct.method,
+    const response = await fetch(SummaryApi.uploadProduct.url,{
+      method : SummaryApi.uploadProduct.method,
       credentials : 'include',
       headers : {
         "content-type" : "application/json"
