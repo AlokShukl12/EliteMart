@@ -7,7 +7,7 @@ const fetchCategoryWiseProduct = async (category) => {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ category }),
+            body: JSON.stringify({category}),
         });
 
         if (!response.ok) {
@@ -18,7 +18,7 @@ const fetchCategoryWiseProduct = async (category) => {
         return dataResponse;
     } catch (error) {
         console.error("Error fetching category-wise product:", error);
-        throw error; // Re-throw to propagate error to the caller
+        throw error; 
     }
 };
 

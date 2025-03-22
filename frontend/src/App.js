@@ -26,14 +26,12 @@ function App() {
     if(dataApi.success){
       dispatch(setUserDetails(dataApi.data))
     }
-
-   
   }
  
   const fetchUserAddToCart= async()=>{
     const dataResponse = await fetch(SummaryApi.addToCartProductCount.url,{
       method : SummaryApi.addToCartProductCount.method,
-      credentials : 'include'
+      credentials : 'include',
     })
 
     const dataApi = await dataResponse.json()
@@ -42,20 +40,16 @@ function App() {
   }
 
   useEffect(()=>{
-    // user details
     fetchUserDetails()
-    //user Details cart product
     fetchUserAddToCart()
     
   },[])
   return (
     <>
     <Context.Provider value={{
-      fetchUserDetails,  //user details fetch
-      cartProductCount,  //current user add to cart product count,
+      fetchUserDetails,  
+      cartProductCount, 
       fetchUserAddToCart
-
-
     }}>
        <ToastContainer 
         position='top-center'
