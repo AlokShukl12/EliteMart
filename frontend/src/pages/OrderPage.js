@@ -8,7 +8,7 @@ const OrderPage = () => {
   const [data,setData] = useState([])
   const fetchOrderDetails = async() => {
     const response = await fetch(SummaryApi.getOrder.url,{
-      method : SummaryApi.method,
+      method : SummaryApi.getOrder.method,
       credentials : 'include'
       
     })
