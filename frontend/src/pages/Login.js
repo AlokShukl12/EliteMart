@@ -1,4 +1,3 @@
-
 import React, {  useContext, useState } from 'react'
 import loginIcons from '../assest/signin.gif'
 import { FaEye } from "react-icons/fa";
@@ -8,7 +7,6 @@ import SummaryApi from '../common';
 import { toast } from 'react-toastify';
 
 import Context from '../context';
-
 
 const Login = () => {
     const [showPassword,setShowPassword] = useState(false)
@@ -59,8 +57,6 @@ const Login = () => {
         }
 
     }
-
-    // console.log("data login",data)
     
   return (
     <section id='login'>
@@ -120,8 +116,6 @@ const Login = () => {
 
                     <p className='my-5'>Don't have account ? <Link to={"/sign-up"} className=' text-red-600 hover:text-red-700 hover:underline'>Sign up</Link></p>
             </div>
-
-
         </div>
     </section>
   )
