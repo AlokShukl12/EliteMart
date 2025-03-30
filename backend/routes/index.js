@@ -28,8 +28,6 @@ const webhooks = require('../controller/order/webhook');
 const orderController = require('../controller/order/orderController');
 
 
-
-
 router.post("/signup",useSignUpController);
 router.post("/signin",userSignInController);
 router.get("/user-details",authToken, userDetailsController);
