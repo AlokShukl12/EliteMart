@@ -91,7 +91,7 @@ const SignUp = () => {
                </div>
                <form className='pt-6 flex flex-col gap-2' onSubmit={handleSubmit}>
                     <div className='grid'>
-                    <label>ame:</label>
+                    <label>Name:</label>
                         <div className='bg-slate-100 p-2'>
                         <input type='text' placeholder='enter your name'
                         name='name' value={data.name} onChange={handleOnChange} required className='w-full h-full outline-none bg-transparent'/>
